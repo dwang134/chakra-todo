@@ -1,0 +1,25 @@
+.shadow{
+       background: #fff;
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+    -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    border-radius: 10px;
+}
+
+.arch-black{
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.exo{
+    font-family: 'Exo 2', sans-serif;
+}
+
+.Raj{
+    font-family: 'Rajdhani', sans-serif;
+}
+
+@media only screen and (max-width: 960px) {
+    .resize {
+        flex-direction: column;
+    }
+  }
