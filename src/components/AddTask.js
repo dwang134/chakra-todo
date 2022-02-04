@@ -1,33 +1,24 @@
 import React, {useState} from 'react'
 import {HStack, Container, Input, Button, Flex, Spacer, VStack, Text, Heading, IconButton} from '@chakra-ui/react'
 import {AiOutlineClose} from 'react-icons/ai'
-import { v4 as uuidv4 } from 'uuid';
 import {itemsBackend} from '../data'
 
-const AddTask = ({tasks, setTasks, setModal}) => {
+const AddTask = ({setModal, addItem}) => {
 
   const [content, setcontent]= useState('')
   const [time, setTime]= useState('')
   // const [tasks, setTasks]= useState(itemsBackend[index])
-
-  const addItem= (item) => {
-
-    console.log(tasks);
-    const id= uuidv4();
-    const newItem= {id, ...item}
-    console.log(newItem);
-    setTasks([...tasks, newItem])
-    console.log(tasks);
-  }
 
   const handleSubmit= (e) => {
     e.preventDefault();
 
     if(!content){
       alert("Please enter a contentription")
+      return
     }
     else if (!time){
       alert("Please enter a time")
+      return
     }
 
     addItem({content, time})

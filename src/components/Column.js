@@ -12,6 +12,7 @@ import Item from './Item'
 import AddTask from './AddTask'
 import Modal from 'react-modal'
 import {itemsBackend} from '../data'
+import { v4 as uuidv4 } from 'uuid';
 
 const Column = ({ column, index}) => {
 
@@ -35,6 +36,19 @@ const Column = ({ column, index}) => {
   function afterOpenModal() {
 
   }
+
+  const addItem= (item) => {
+    console.log(tasks);
+    const id= uuidv4();
+    const newItem= {id, ...item}
+    console.log(newItem);
+    setTasks([...tasks, newItem])
+    console.log(tasks);
+  }
+
+  const deleteItem= (id) => {
+    setTasks(tasks.filter((task)=> task.id!== id))
+  }
   
   return (
     //responsive border
@@ -47,7 +61,7 @@ const Column = ({ column, index}) => {
         style={customStyles}
         contentLabel="Example Modal"
       >
-      <AddTask setModal={setModal} tasks= {tasks} setTasks= {setTasks}/>
+      <AddTask setModal={setModal} tasks= {tasks} setTasks= {setTasks} addItem= {addItem}/>
       </Modal>
       <Heading pb="4">{column.name}</Heading>
       {/* {column.items.map((item, index)=> (
@@ -55,7 +69,7 @@ const Column = ({ column, index}) => {
         ))
       } */}
       {tasks.map((task)=> (
-        <Item key= {task.id} content= {task.content} time= {task.time}></Item>
+        <Item key= {task.id} task= {task} deleteItem= {deleteItem}></Item>
       ))}
        {/* {(tasks[index]).map((list)=>(
         <Item key={list.id} content= {list.content} time= {list.time}></Item>
