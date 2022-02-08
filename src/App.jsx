@@ -27,24 +27,33 @@ function App() {
       return;
     }
 
-    
+    //started from droppable column ex. column-1
     const start = data.columns[source.droppableId]
-    const finish = data.columns[destination.droppableId]
 
-    if( start === finish ) {
+      //getting the tasks array (making a new var so dont alternate original data)
       const newTaskIds = Array.from(start.taskIds)
+
+      //remove one item from source index position
       newTaskIds.splice(source.index, 1)
+
+      //remove nothing insert the draggableId object ex. task-1
       newTaskIds.splice(destination.index, 0, draggableId)
   
+      //have whatever from column 1 and new taskIds array
       const newColumn = {
         ...start, 
         taskIds: newTaskIds 
       }
 
+    //
     const newState = {
+      //going through whatever is in data
         ...data,
+        //passing new column to columns object
         columns: { 
+          //go through all columns
           ...data.columns,  
+          //overwrite existing column
           [newColumn.id]: newColumn,
         }
       }
@@ -52,7 +61,7 @@ function App() {
     setData(newState);
     return
   } 
-}
+
   //had task state here as itemsBackend
   // const [columns, setColumns] = useState(columnsFromBackend);
 
