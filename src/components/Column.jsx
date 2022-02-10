@@ -1,5 +1,5 @@
 import React from "react";
-import {Heading, VStack, IconButton, Text, Container} from "@chakra-ui/react";
+import {Heading, VStack, IconButton, Text, Container, Box} from "@chakra-ui/react";
 import { useState } from "react";
 import {BsPlusLg } from "react-icons/bs";
 import AddTask from './AddTask'
@@ -50,6 +50,7 @@ const Column = ({column, tasks}) => {
         {...provided.droppableProps}
         backgroundColor= {snapshot.isDraggingOver ? 'skyblue' : 'gray.200'}
         >
+        {/* maybe you can add some sort of restricton here if its more than 4 then do something*/}
        {tasks.map((task, index) => <Item key={task.id} task={task} index={index}></Item>)}
        {provided.placeholder}
        </Container>

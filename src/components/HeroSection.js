@@ -8,7 +8,7 @@ const HeroSection = ({data, setData}) => {
       return(
       <>
       <Flex
-        className= "shadow resize"
+      className= "shadow resize"
       border="1px"
       borderColor="gray.200"
       borderWidth="2px"
@@ -25,7 +25,7 @@ const HeroSection = ({data, setData}) => {
         })}
 
       </Flex>
-    <Box  display= 'flex' height= '25vh' w='100%' borderWidth= '2px' borderRadius='lg' justifyContent= 'center' alignItems= 'center' bgGradient='linear(to-l, #7928CA, #FF0080)'><FaTrash fontSize= {50} color= 'white'/></Box>
+    <Box className="shadow" display= 'flex' height= '25vh' w='100%' borderWidth= '2px' borderRadius='lg' justifyContent= 'center' alignItems= 'center' bgGradient='linear(to-l, #7928CA, #FF0080)'><FaTrash fontSize= {50} color= 'white'/></Box>
     </>
   )
 };

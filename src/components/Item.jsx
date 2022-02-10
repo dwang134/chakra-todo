@@ -16,11 +16,11 @@ const Item = ({task, deleteItem, index}) => {
                 {...provided.dragHandleProps}
                 ref= {provided.innerRef}
                 backgroundColor= {snapshot.isDragging? 'lightgreen' : 'white'}
-                rounded= 'lg' p= '4' w='90%' mb= {2}
+                rounded= 'lg' p= '4' w='90%' ml={4} mb= {2} 
                 >
                 <Container justifySelf= 'center' alignSelf= 'center'>
-                <Heading fontSize= {{ base: '24px', md: '40px', lg: '22px' }}>{task.content}</Heading>
-                <Text>{task.time}</Text>
+                <Heading fontSize= {{ base: '24px', md: '30px', lg: '22px' }}>{task.content}</Heading>
+                <Text fontSize= {{ base: '12px', md: '22px', lg: '18px' }}>{task.time}</Text>
                 </Container>
                 <IconButton justifySelf= 'end' alignSelf= 'end' isRound= 'true' size= 'md'><MdDelete onClick= {()=> deleteItem(task.id)}/></IconButton>
                 </Flex>                
