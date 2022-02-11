@@ -1,10 +1,9 @@
 import './App.css';
 import {VStack, Container} from '@chakra-ui/react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
 import initialData from './data/initial-data'
-import { AiOutlineConsoleSql } from 'react-icons/ai';
 import {DragDropContext} from 'react-beautiful-dnd'
 
 function App() {
@@ -24,6 +23,10 @@ function App() {
       destination.index === source.index
     ) {
       return
+    }
+
+    if (destination.droppableId === "delete"){
+      deleteItem(source.index, source.draggableId)
     }
 
     //started from droppable column ex. column-1
@@ -48,7 +51,6 @@ function App() {
       taskIds: newTaskIds 
     }
 
-  //
   const newState = {
     //going through whatever is in data
       ...data,
@@ -91,16 +93,37 @@ function App() {
     setData(newState)
   }
 
-  //had task state here as itemsBackend
-  // const [columns, setColumns] = useState(columnsFromBackend);
+  const deleteItem = (index, taskId) => {
+    const newColumns = {...data.columns} 
+    const newTasks = {...data.tasks} 
+
+    Object.keys(newColumns).forEach(column => {
+
+      const deleteTarget = newColumns[column].taskIds.find(task => task === taskId)
+      if( deleteTarget ) { 
+        newColumns[column].taskIds.splice(index, 1) 
+      }
+    })
+
+    delete newTasks[taskId] 
+
+    const newState = {
+      ...initialData,
+      tasks: newTasks,
+      columns: newColumns,
+    }
+
+    setData(newState)
+  };
+
 
   return (
     <DragDropContext onDragEnd= {onDragEnd}>
     {/* entire body(can use bg to test) */}
     <VStack p={4}>
       <Header/>
-        <Container maxW= "container.xl"> 
-        <HeroSection data= {data} setData= {setData}/>
+        <Container maxW= "container.xl">
+        <HeroSection data= {data} setData= {setData} deleteItem= {deleteItem}/>
         </Container>
     </VStack>
     </DragDropContext>
