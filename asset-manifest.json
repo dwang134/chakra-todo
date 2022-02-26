@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.e052491d.css",
-    "main.js": "/static/js/main.2d72203c.js",
-    "index.html": "/index.html",
-    "main.e052491d.css.map": "/static/css/main.e052491d.css.map",
-    "main.2d72203c.js.map": "/static/js/main.2d72203c.js.map"
+    "main.css": "/chakra-todo/static/css/main.e052491d.css",
+    "main.js": "/chakra-todo/static/js/main.2d72203c.js",
+    "index.html": "/chakra-todo/index.html",
+    "main.e052491d.css.map": "/chakra-todo/static/css/main.e052491d.css.map",
+    "main.2d72203c.js.map": "/chakra-todo/static/js/main.2d72203c.js.map"
   },
   "entrypoints": [
     "static/css/main.e052491d.css",
