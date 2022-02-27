@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/chakra-todo/static/css/main.e052491d.css",
-    "main.js": "/chakra-todo/static/js/main.2d72203c.js",
+    "main.css": "/chakra-todo/static/css/main.d51154c3.css",
+    "main.js": "/chakra-todo/static/js/main.47439131.js",
     "index.html": "/chakra-todo/index.html",
-    "main.e052491d.css.map": "/chakra-todo/static/css/main.e052491d.css.map",
-    "main.2d72203c.js.map": "/chakra-todo/static/js/main.2d72203c.js.map"
+    "main.d51154c3.css.map": "/chakra-todo/static/css/main.d51154c3.css.map",
+    "main.47439131.js.map": "/chakra-todo/static/js/main.47439131.js.map"
   },
   "entrypoints": [
-    "static/css/main.e052491d.css",
-    "static/js/main.2d72203c.js"
+    "static/css/main.d51154c3.css",
+    "static/js/main.47439131.js"
   ]
 }
