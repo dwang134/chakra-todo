@@ -35,7 +35,7 @@ const AddTask = ({setModal, data, setData, countId, setCountId}) => {
         isClosable: true,
       });
     }
-
+    
     const newTaskId = countId + 1
     const newTaskIds = [...data.columns['column-1'].taskIds]
     newTaskIds.push(`task${newTaskId}`)

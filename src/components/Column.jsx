@@ -13,11 +13,12 @@ const Column = ({ column, tasks, deleteItem}) => {
     //responsive border
     <Droppable droppableId= {column.id}>
     {(provided, snapshot)=> (
-    <VStack backgroundColor={bg} rounded="lg" width="100%" p="5" m= {2}>
+    <VStack backgroundColor={bg} rounded="lg" width="100%" maxW= '100vw' p="5" m= {2}>
 
       <Heading pb="4" color={color}>{column.title}</Heading>
 
         <Container
+        centerContent
         ref= {provided.innerRef}
         {...provided.droppableProps}
         backgroundColor= {snapshot.isDraggingOver ? bg2 : bg}
